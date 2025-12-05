@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="assecor-assessment-backend.AppHost/assecor-assessment-backend.AppHost.csproj" />
+  <Project Path="assecor-assessment-backend.ServiceDefaults/assecor-assessment-backend.ServiceDefaults.csproj" />
+  <Project Path="assecor-assessment-backend/assecor-assessment-backend.csproj" />
+</Solution>
