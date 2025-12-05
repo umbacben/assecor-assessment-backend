@@ -15,5 +15,5 @@ public class assecor_assessment_backend : global::Aspire.Hosting.IProjectMetadat
     /// <summary>
     /// The path to the assecor_assessment_backend project.
     /// </summary>
-    public string ProjectPath => """P:\Repos\assecor-assessment-backend\assecor-assessment-backend\assecor-assessment-backend\assecor-assessment-backend.csproj""";
+    public string ProjectPath => """P:\Repos\assecor-assessment-backend\assecor-assessment-backend\assecor-assessment-backend.csproj""";
 }

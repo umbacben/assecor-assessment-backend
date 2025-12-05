@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "P:\\Repos\\assecor-assessment-backend\\assecor-assessment-backend\\assecor-assessment-backend.AppHost\\assecor-assessment-backend.AppHost.csproj": {}
+    "P:\\Repos\\assecor-assessment-backend\\assecor-assessment-backend.AppHost\\assecor-assessment-backend.AppHost.csproj": {}
   },
   "projects": {
-    "P:\\Repos\\assecor-assessment-backend\\assecor-assessment-backend\\assecor-assessment-backend.AppHost\\assecor-assessment-backend.AppHost.csproj": {
+    "P:\\Repos\\assecor-assessment-backend\\assecor-assessment-backend.AppHost\\assecor-assessment-backend.AppHost.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "P:\\Repos\\assecor-assessment-backend\\assecor-assessment-backend\\assecor-assessment-backend.AppHost\\assecor-assessment-backend.AppHost.csproj",
+        "projectUniqueName": "P:\\Repos\\assecor-assessment-backend\\assecor-assessment-backend.AppHost\\assecor-assessment-backend.AppHost.csproj",
         "projectName": "assecor-assessment-backend.AppHost",
-        "projectPath": "P:\\Repos\\assecor-assessment-backend\\assecor-assessment-backend\\assecor-assessment-backend.AppHost\\assecor-assessment-backend.AppHost.csproj",
+        "projectPath": "P:\\Repos\\assecor-assessment-backend\\assecor-assessment-backend.AppHost\\assecor-assessment-backend.AppHost.csproj",
         "packagesPath": "C:\\Users\\umbac\\.nuget\\packages\\",
-        "outputPath": "P:\\Repos\\assecor-assessment-backend\\assecor-assessment-backend\\assecor-assessment-backend.AppHost\\obj\\",
+        "outputPath": "P:\\Repos\\assecor-assessment-backend\\assecor-assessment-backend.AppHost\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

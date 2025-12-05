@@ -18,17 +18,15 @@ using System.Reflection;
     "xt\\")]
 [assembly: System.Reflection.AssemblyMetadata("dcpbinpath", "C:\\Users\\umbac\\.nuget\\packages\\aspire.hosting.orchestration.win-x64\\9.5.0\\tools\\e" +
     "xt\\bin\\")]
-[assembly: System.Reflection.AssemblyMetadata("apphostprojectpath", "P:\\Repos\\assecor-assessment-backend\\assecor-assessment-backend\\assecor-assessment" +
-    "-backend.AppHost")]
+[assembly: System.Reflection.AssemblyMetadata("apphostprojectpath", "P:\\Repos\\assecor-assessment-backend\\assecor-assessment-backend.AppHost")]
 [assembly: System.Reflection.AssemblyMetadata("apphostprojectname", "assecor-assessment-backend.AppHost.csproj")]
 [assembly: System.Reflection.AssemblyMetadata("aspiredashboardpath", "C:\\Users\\umbac\\.nuget\\packages\\aspire.dashboard.sdk.win-x64\\9.5.0\\tools\\Aspire.Da" +
     "shboard.exe")]
-[assembly: System.Reflection.AssemblyMetadataAttribute("apphostprojectbaseintermediateoutputpath", "P:\\Repos\\assecor-assessment-backend\\assecor-assessment-backend\\assecor-assessment" +
-    "-backend.AppHost\\obj\\")]
+[assembly: System.Reflection.AssemblyMetadataAttribute("apphostprojectbaseintermediateoutputpath", "P:\\Repos\\assecor-assessment-backend\\assecor-assessment-backend.AppHost\\obj\\")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("assecor-assessment-backend.AppHost")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+328a7d0293082ce60b243554307926258e0f5556")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+23d74816f9d27bbfe5e5b7da1860a8798f4d67f8")]
 [assembly: System.Reflection.AssemblyProductAttribute("assecor-assessment-backend.AppHost")]
 [assembly: System.Reflection.AssemblyTitleAttribute("assecor-assessment-backend.AppHost")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

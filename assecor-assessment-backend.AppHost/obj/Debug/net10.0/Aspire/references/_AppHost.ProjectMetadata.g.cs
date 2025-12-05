@@ -17,5 +17,5 @@ public class assecor_assessment_backend_AppHost
     /// <summary>
     /// The path to the Aspire Host project.
     /// </summary>
-    public static string ProjectPath => """P:\Repos\assecor-assessment-backend\assecor-assessment-backend\assecor-assessment-backend.AppHost""";
+    public static string ProjectPath => """P:\Repos\assecor-assessment-backend\assecor-assessment-backend.AppHost""";
 }

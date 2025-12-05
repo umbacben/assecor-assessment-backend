@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "P:\\Repos\\assecor-assessment-backend\\assecor-assessment-backend\\assecor-assessment-backend.ServiceDefaults\\assecor-assessment-backend.ServiceDefaults.csproj": {}
+    "P:\\Repos\\assecor-assessment-backend\\assecor-assessment-backend.ServiceDefaults\\assecor-assessment-backend.ServiceDefaults.csproj": {}
   },
   "projects": {
-    "P:\\Repos\\assecor-assessment-backend\\assecor-assessment-backend\\assecor-assessment-backend.ServiceDefaults\\assecor-assessment-backend.ServiceDefaults.csproj": {
+    "P:\\Repos\\assecor-assessment-backend\\assecor-assessment-backend.ServiceDefaults\\assecor-assessment-backend.ServiceDefaults.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "P:\\Repos\\assecor-assessment-backend\\assecor-assessment-backend\\assecor-assessment-backend.ServiceDefaults\\assecor-assessment-backend.ServiceDefaults.csproj",
+        "projectUniqueName": "P:\\Repos\\assecor-assessment-backend\\assecor-assessment-backend.ServiceDefaults\\assecor-assessment-backend.ServiceDefaults.csproj",
         "projectName": "assecor-assessment-backend.ServiceDefaults",
-        "projectPath": "P:\\Repos\\assecor-assessment-backend\\assecor-assessment-backend\\assecor-assessment-backend.ServiceDefaults\\assecor-assessment-backend.ServiceDefaults.csproj",
+        "projectPath": "P:\\Repos\\assecor-assessment-backend\\assecor-assessment-backend.ServiceDefaults\\assecor-assessment-backend.ServiceDefaults.csproj",
         "packagesPath": "C:\\Users\\umbac\\.nuget\\packages\\",
-        "outputPath": "P:\\Repos\\assecor-assessment-backend\\assecor-assessment-backend\\assecor-assessment-backend.ServiceDefaults\\obj\\",
+        "outputPath": "P:\\Repos\\assecor-assessment-backend\\assecor-assessment-backend.ServiceDefaults\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "FI7iKcT/0bU=",
+  "dgSpecHash": "lJHhaMV5ieI=",
   "success": true,
-  "projectFilePath": "P:\\Repos\\assecor-assessment-backend\\assecor-assessment-backend\\assecor-assessment-backend.ServiceDefaults\\assecor-assessment-backend.ServiceDefaults.csproj",
+  "projectFilePath": "P:\\Repos\\assecor-assessment-backend\\assecor-assessment-backend.ServiceDefaults\\assecor-assessment-backend.ServiceDefaults.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\umbac\\.nuget\\packages\\microsoft.extensions.ambientmetadata.application\\9.9.0\\microsoft.extensions.ambientmetadata.application.9.9.0.nupkg.sha512",
     "C:\\Users\\umbac\\.nuget\\packages\\microsoft.extensions.compliance.abstractions\\9.9.0\\microsoft.extensions.compliance.abstractions.9.9.0.nupkg.sha512",

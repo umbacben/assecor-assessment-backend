@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "jUV8v9rxD7k=",
+  "dgSpecHash": "W3i8XcW35Lg=",
   "success": true,
-  "projectFilePath": "P:\\Repos\\assecor-assessment-backend\\assecor-assessment-backend\\assecor-assessment-backend.AppHost\\assecor-assessment-backend.AppHost.csproj",
+  "projectFilePath": "P:\\Repos\\assecor-assessment-backend\\assecor-assessment-backend.AppHost\\assecor-assessment-backend.AppHost.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\umbac\\.nuget\\packages\\aspire.dashboard.sdk.win-x64\\9.5.0\\aspire.dashboard.sdk.win-x64.9.5.0.nupkg.sha512",
     "C:\\Users\\umbac\\.nuget\\packages\\aspire.hosting\\9.5.0\\aspire.hosting.9.5.0.nupkg.sha512",
