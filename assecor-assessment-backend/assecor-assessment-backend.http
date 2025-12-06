@@ -1,6 +1,30 @@
+@assecor-assessment-backend_HostAddress = https://localhost:7114
 @assecor_assessment_backend_HostAddress = http://localhost:5248
 
-//GET {{assecor_assessment_backend_HostAddress}}/weatherforecast/
 Accept: application/json
+
+###
+
+@id=0
+GET {{assecor-assessment-backend_HostAddress}}/persons/{id:int:min(0)}?id={{id}}
+Content-Type: application/json
+
+###
+
+GET {{assecor-assessment-backend_HostAddress}}/persons
+Content-Type: application/json
+###
+
+POST {{assecor-assessment-backend_HostAddress}}/persons
+Content-Type: application/json
+
+{
+  //Persons
+}
+
+###
+
+@color=string
+GET {{assecor-assessment-backend_HostAddress}}/color/{color:maxlength(10)}?color={{color}}
 
 ###

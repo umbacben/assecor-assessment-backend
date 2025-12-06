@@ -1,5 +1,5 @@
 <Solution>
+  <Project Path="assecor-assessment-backend-tests/assecor-assessment-backend.Tests.csproj" Id="1a1740c0-510e-451f-801e-32476c12f6a2" />
   <Project Path="assecor-assessment-backend.AppHost/assecor-assessment-backend.AppHost.csproj" />
-  <Project Path="assecor-assessment-backend.ServiceDefaults/assecor-assessment-backend.ServiceDefaults.csproj" />
   <Project Path="assecor-assessment-backend/assecor-assessment-backend.csproj" />
 </Solution>

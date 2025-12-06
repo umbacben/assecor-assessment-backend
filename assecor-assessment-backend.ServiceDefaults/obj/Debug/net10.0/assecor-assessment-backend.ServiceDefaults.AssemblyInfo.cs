@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("assecor-assessment-backend.ServiceDefaults")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+23d74816f9d27bbfe5e5b7da1860a8798f4d67f8")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+886b18813778c8b3871c09404c305a1ec232d9e1")]
 [assembly: System.Reflection.AssemblyProductAttribute("assecor-assessment-backend.ServiceDefaults")]
 [assembly: System.Reflection.AssemblyTitleAttribute("assecor-assessment-backend.ServiceDefaults")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
