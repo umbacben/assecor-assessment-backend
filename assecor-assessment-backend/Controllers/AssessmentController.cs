@@ -76,15 +76,23 @@ namespace assecor_assessment_backend.Controllers
 
         [Route("persons")]
         [HttpPost]
-        public async Task<ActionResult> Post(Persons person)
+        public async Task<ActionResult> Post(Persons? person)
         {
             try
             {
-                if (person == null || _Persons.Any(persons => persons.Id == person.Id) || !person.DoesColorExist(out int colorkey))
+                if (person == null )
                 {
-                    return BadRequest();
+                    return StatusCode(StatusCodes.Status400BadRequest);
                 }
-
+                if (_Persons.Any(persons => persons.FirstName == person.FirstName && persons.LastName == person.LastName))
+                {
+                    return StatusCode(StatusCodes.Status500InternalServerError, "Error creating new Persons record: Person already exists");
+                }
+                if (!person.DoesColorExist(out int colorkey))
+                {
+                    return StatusCode(StatusCodes.Status400BadRequest, "Error creating new Persons record: Color invalid");
+                }
+                   
                 int newId = _Persons.Max(p => p.Id) + 1;
                 person.Id = newId;
                 var didCreatePerson = _CSVAccess.AddPersons(person);

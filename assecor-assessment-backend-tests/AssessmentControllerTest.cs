@@ -34,7 +34,7 @@ namespace assecor_assessment_backend.Tests
             _AddedPersons = new List<Persons> {
                 new Persons(1, "Hans", "Müller", "67742 Lauterecken", 1),
                 new Persons(2, "Peter", "Petersen", "18439 Stralsund", 2),
-                new Persons(3, "Anna", "Schmidt", "10115 Berlin", 3)
+                new Persons(3, "Illidan", "Stormrage", "66666 Outland", 3)
             };
             File.Copy(_TestInputFile, _BackupTestFile, true);
         }
@@ -87,9 +87,38 @@ namespace assecor_assessment_backend.Tests
         }
 
         [Fact]
+        public async Task PostPerson_ShouldFailToAddPersonDueToColor()
+        {
+            var newPerson = new Persons(0, "Anna", "Schmidt", "10115", "Berlin", "black");
+            var postResult = await _Controller.Post(newPerson);
+            var failResult = postResult as ObjectResult;
+            Assert.NotNull(failResult);
+            Assert.Equal(StatusCodes.Status400BadRequest, failResult.StatusCode);
+        }
+
+        [Fact]
+        public async Task PostPerson_ShouldFailToAddExistingPerson()
+        {
+            var newPerson = new Persons(1, "Hans", "Müller", "67742 Lauterecken", 1);
+            var postResult = await _Controller.Post(newPerson);
+            var failResult = postResult as ObjectResult;
+            Assert.NotNull(failResult);
+            Assert.Equal(StatusCodes.Status500InternalServerError, failResult.StatusCode);
+        }
+
+        [Fact]
+        public async Task PostPerson_ShouldFailToAddNullPerson()
+        {
+            var postResult = await _Controller.Post(null);
+            var failResult = postResult as StatusCodeResult;
+            Assert.NotNull(failResult);
+            Assert.Equal(StatusCodes.Status400BadRequest, failResult.StatusCode);
+        }
+
+        [Fact]
         public async Task PostPerson_ShouldAddPerson()
         {
-            var newPerson = new Persons(0, "Anna", "Schmidt", "10115 Berlin", 3);
+            var newPerson = new Persons(0, "Illidan", "Stormrage", "66666 Outland", 3);
             var postResult = await _Controller.Post(newPerson);
             var okresult = postResult as ObjectResult;
             Assert.NotNull(okresult);
