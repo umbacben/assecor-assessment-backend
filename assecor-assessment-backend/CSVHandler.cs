@@ -25,7 +25,7 @@ namespace assecor_assessment_backend
             using (StreamWriter writer = new StreamWriter(FilePath, true))
             {
                 writer.WriteLine();
-                writer.WriteLine(CsvString);
+                writer.Write(CsvString);
             }
             return true;
         }

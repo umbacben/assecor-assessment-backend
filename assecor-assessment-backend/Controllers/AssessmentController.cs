@@ -1,6 +1,10 @@
 ﻿using assecor_assessment_backend.Models;
 using Microsoft.AspNetCore.Mvc;
+using System;
+using System.Runtime.CompilerServices;
+using System.Threading.Tasks;
 
+[assembly: InternalsVisibleTo("assecor-assessment-backend.Tests")]
 namespace assecor_assessment_backend.Controllers
 {
     [ApiController]
@@ -19,7 +23,7 @@ namespace assecor_assessment_backend.Controllers
         }
 
         [NonAction]
-        public bool OverrideFilePath(string filePath)
+        internal bool OverrideFilePath(string filePath)
         {
             try
             {
@@ -35,32 +39,79 @@ namespace assecor_assessment_backend.Controllers
 
         [Route("persons")]
         [HttpGet]
-        public IEnumerable<Persons> Get()
+        public async Task<ActionResult<IEnumerable<Persons>>> Get()
         {
-            return _Persons;
+            if (_Persons == null || !_Persons.Any())
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError,
+                    "No Persons Found");
+            }
+            return Ok(_Persons);
         }
 
         [Route("persons/{id:int:min(0)}")]
         [HttpGet]
-        public Persons Get(int id)
+        public async Task<ActionResult<Persons>> Get(int id)
         {
-            return _Persons.First(Person => Person.Id == id);
+            if (!_Persons.Any(Person => Person.Id == id))
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError,
+                    "Error retrieving data from the database");
+            }
+            return Ok(_Persons.First(Person => Person.Id == id));
         }
 
         [Route("color/{color:maxlength(10)}")]
         [HttpGet]
-        public IEnumerable<Persons> Get(string color)
+        public async Task<ActionResult<IEnumerable<Persons>>> Get(string color)
         {
             var filteredPersons = _Persons.Where(Person => Person.Color.Equals(color, StringComparison.OrdinalIgnoreCase));
-            return filteredPersons;
+            if (filteredPersons == null || !filteredPersons.Any())
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError,
+                    $"No Persons with {color} as their favorite color Found");
+            }
+            return Ok(filteredPersons);
         }
 
         [Route("persons")]
         [HttpPost]
-        public IActionResult Post(Persons person)
+        public async Task<ActionResult> Post(Persons person)
         {
-            // You can add logic to process the person object here
-            return Ok();
+            try
+            {
+                if (person == null || _Persons.Any(persons => persons.Id == person.Id) || !person.DoesColorExist(out int colorkey))
+                {
+                    return BadRequest();
+                }
+
+                int newId = _Persons.Max(p => p.Id) + 1;
+                person.Id = newId;
+                var didCreatePerson = _CSVAccess.AddPersons(person);
+                if (didCreatePerson)
+                {
+                    _Persons = _Persons.Concat(new List<Persons> { person });
+                    return CreatedAtAction(nameof(Get), new { id = person.Id }, person);
+                }
+                else
+                {
+                    return StatusCode(StatusCodes.Status500InternalServerError,
+                    "Error creating new Persons record");
+                }
+
+
+            }
+            catch (Exception)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError,
+                "Error creating new Persons record");
+            }
+        }
+
+        [NonAction]
+        private bool IsInvalidColor(string color)
+        {
+            throw new NotImplementedException();
         }
     }
 }

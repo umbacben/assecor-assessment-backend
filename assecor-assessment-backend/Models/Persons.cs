@@ -22,6 +22,16 @@ namespace assecor_assessment_backend.Models
             {7, "weiß" }
         };
 
+        public Persons()
+        {
+            Id = -1;
+            FirstName = "";
+            LastName = "";
+            Zipcode = "";
+            City = "";
+            Color = "";
+        }
+
         public Persons(int _Id, string _FirstName, string _LastName, string _Location, int _Color)
         {
             this.Id = _Id;
@@ -33,10 +43,20 @@ namespace assecor_assessment_backend.Models
             Color = ColorDictionary[_Color];
         }
 
+        public Persons(int _Id, string _FirstName, string _LastName, string _ZipCode, string _City, string _Color)
+        {
+            this.Id = _Id;
+            this.FirstName = _FirstName.Trim();
+            this.LastName = _LastName.Trim();
+            Zipcode = _ZipCode;
+            City = _City;
+            Color = _Color;
+        }
+
         public bool ToCSVString(out string CVSString)
         {
             int ColorKey;
-            if (!GetKeyFromValue(out ColorKey))
+            if (!DoesColorExist(out ColorKey))
             {
                 CVSString = "";
                 return false;
@@ -45,7 +65,7 @@ namespace assecor_assessment_backend.Models
             return true;
         }
 
-        private bool GetKeyFromValue(out int colorkey)
+        public bool DoesColorExist(out int colorkey)
         {
             if (!ColorDictionary.ContainsValue(Color))
             {
