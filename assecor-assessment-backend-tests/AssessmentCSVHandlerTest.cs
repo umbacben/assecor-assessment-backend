@@ -11,7 +11,7 @@ namespace assecor_assessment_backend_tests
         private readonly IEnumerable<Persons> _ExpectedWritePersons;
         private readonly string _BackupTestFile = "backup-test-csv-reader.csv";
         private readonly string _TestInputFile = "test-csv-reader.csv";
-        private readonly ICSVAccess _CSVAccess;
+        private readonly IDataAccess _CSVAccess;
 
         public AssessmentCSVHandlerTest()
         {

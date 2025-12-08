@@ -1,11 +1,15 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 
 namespace assecor_assessment_backend.Models
 {
     public class Persons
     {
-        public int Id { get; set; }
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [Key]
+        public int Id { get; set; } = -1;
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Zipcode { get; set; }
@@ -51,6 +55,16 @@ namespace assecor_assessment_backend.Models
             Zipcode = _ZipCode;
             City = _City;
             Color = _Color;
+        }
+
+        public Persons(int _Id, string _FirstName, string _LastName, string _ZipCode, string _City, int _Color)
+        {
+            this.Id = _Id;
+            this.FirstName = _FirstName.Trim();
+            this.LastName = _LastName.Trim();
+            Zipcode = _ZipCode;
+            City = _City;
+            Color = ColorDictionary[_Color];
         }
 
         public bool ToCSVString(out string CVSString)

@@ -1,8 +1,6 @@
 ﻿using assecor_assessment_backend.Models;
 using Microsoft.AspNetCore.Mvc;
-using System;
 using System.Runtime.CompilerServices;
-using System.Threading.Tasks;
 
 [assembly: InternalsVisibleTo("assecor-assessment-backend.Tests")]
 namespace assecor_assessment_backend.Controllers
@@ -10,16 +8,19 @@ namespace assecor_assessment_backend.Controllers
     [ApiController]
     public class AssessmentController : ControllerBase
     {
-        private readonly ICSVAccess _CSVAccess;
+        private readonly IDataAccess _DataAccess;
         private IEnumerable<Persons> _Persons;
         private readonly string _DefaultFilePath = "sample-input.csv";
 
         
-        public AssessmentController(ICSVAccess cSVAccess) : base()
+        public AssessmentController(IDataAccess dataAccess) : base()
         {
-            _CSVAccess = cSVAccess;
-            ((CSVHandler)_CSVAccess).FilePath = _DefaultFilePath;
-            _CSVAccess.ReadPersons(out _Persons);
+            _DataAccess = dataAccess;
+            if(_DataAccess.GetType() == typeof(CSVHandler))
+            {
+                ((CSVHandler)_DataAccess).FilePath = _DefaultFilePath;
+            }
+            _DataAccess.ReadPersons(out _Persons);
         }
 
         [NonAction]
@@ -27,8 +28,11 @@ namespace assecor_assessment_backend.Controllers
         {
             try
             {
-                ((CSVHandler)_CSVAccess).FilePath = filePath;
-                _CSVAccess.ReadPersons(out _Persons);
+                if (_DataAccess.GetType() == typeof(CSVHandler))
+                {
+                    ((CSVHandler)_DataAccess).FilePath = _DefaultFilePath;
+                }
+                _DataAccess.ReadPersons(out _Persons);
                 return true;
             }
             catch
@@ -95,7 +99,7 @@ namespace assecor_assessment_backend.Controllers
                    
                 int newId = _Persons.Max(p => p.Id) + 1;
                 person.Id = newId;
-                var didCreatePerson = _CSVAccess.AddPersons(person);
+                var didCreatePerson = _DataAccess.AddPersons(person);
                 if (didCreatePerson)
                 {
                     _Persons = _Persons.Concat(new List<Persons> { person });

@@ -3,7 +3,7 @@ using System;
 
 namespace assecor_assessment_backend
 {
-    public class CSVHandler : ICSVAccess
+    public class CSVHandler : IDataAccess
     {
         public string? FilePath { get; set; } = "sample-input.csv";
         public CSVHandler()
