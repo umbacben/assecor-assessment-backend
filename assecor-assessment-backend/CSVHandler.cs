@@ -3,7 +3,7 @@ using System;
 
 namespace assecor_assessment_backend
 {
-    public class CSVHandler : ICSVAccess
+    public class CSVHandler : IDataAccess
     {
         public string? FilePath { get; set; } = "sample-input.csv";
         public CSVHandler()
@@ -30,7 +30,7 @@ namespace assecor_assessment_backend
             return true;
         }
 
-        public bool ReadPersons(out IEnumerable<Persons> persons)
+        public bool GetPersonsList(out IEnumerable<Persons> persons)
         {
             if (FilePath == null)
             {

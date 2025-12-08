@@ -17,7 +17,7 @@ namespace assecor_assessment_backend.Tests
         private readonly AssessmentController _Controller;
         private readonly string _BackupTestFile = "backup-test-controller.csv";
         private readonly string _TestInputFile = "test-controller.csv";
-        private readonly ICSVAccess _CSVAccess;
+        private readonly IDataAccess _CSVAccess;
 
         public AssessmentControllerTest() {
             _CSVAccess = new CSVHandler();

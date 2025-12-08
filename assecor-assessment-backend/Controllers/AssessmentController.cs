@@ -10,16 +10,16 @@ namespace assecor_assessment_backend.Controllers
     [ApiController]
     public class AssessmentController : ControllerBase
     {
-        private readonly ICSVAccess _CSVAccess;
+        private readonly IDataAccess _CSVAccess;
         private IEnumerable<Persons> _Persons;
         private readonly string _DefaultFilePath = "sample-input.csv";
 
         
-        public AssessmentController(ICSVAccess cSVAccess) : base()
+        public AssessmentController(IDataAccess cSVAccess) : base()
         {
             _CSVAccess = cSVAccess;
             ((CSVHandler)_CSVAccess).FilePath = _DefaultFilePath;
-            _CSVAccess.ReadPersons(out _Persons);
+            _CSVAccess.GetPersonsList(out _Persons);
         }
 
         [NonAction]
@@ -28,7 +28,7 @@ namespace assecor_assessment_backend.Controllers
             try
             {
                 ((CSVHandler)_CSVAccess).FilePath = filePath;
-                _CSVAccess.ReadPersons(out _Persons);
+                _CSVAccess.GetPersonsList(out _Persons);
                 return true;
             }
             catch

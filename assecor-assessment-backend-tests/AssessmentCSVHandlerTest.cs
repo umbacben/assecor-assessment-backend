@@ -11,7 +11,7 @@ namespace assecor_assessment_backend_tests
         private readonly IEnumerable<Persons> _ExpectedWritePersons;
         private readonly string _BackupTestFile = "backup-test-csv-reader.csv";
         private readonly string _TestInputFile = "test-csv-reader.csv";
-        private readonly ICSVAccess _CSVAccess;
+        private readonly IDataAccess _CSVAccess;
 
         public AssessmentCSVHandlerTest()
         {
@@ -35,7 +35,7 @@ namespace assecor_assessment_backend_tests
         public void ReadCSV_ShouldReturnAllPersons()
         {
             IEnumerable<Persons> PersonsResult;
-            _CSVAccess.ReadPersons(out PersonsResult);
+            _CSVAccess.GetPersonsList(out PersonsResult);
             PersonsResult.Should().BeEquivalentTo(_ExpectedReadPersons, options => options.IncludingAllRuntimeProperties());
         }
 
@@ -44,7 +44,7 @@ namespace assecor_assessment_backend_tests
         {
             _CSVAccess.AddPersons(new Persons(3, "Illidan", "Stormrage", "66666 Outland", 2));
             IEnumerable<Persons> WrittenResults;
-            _CSVAccess.ReadPersons(out WrittenResults);
+            _CSVAccess.GetPersonsList(out WrittenResults);
             File.Copy(_BackupTestFile, _TestInputFile, true);
             WrittenResults.Should().BeEquivalentTo(_ExpectedWritePersons, options => options.IncludingAllRuntimeProperties());
         }
